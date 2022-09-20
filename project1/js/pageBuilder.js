@@ -10,8 +10,15 @@ let currentPage;
 function buildPage(pageName, state) {
     // Set the page title dynamically
     $('title')[0].innerHTML = $('title').innerText = pageName;
+
+    // Set the currentPage to whatever the "state" was passed in
     currentPage = state;
-    console.log(currentPage);
+
+    console.log($('body'));
+    // if ($(this).css('background-color') === 'white') {
+    //     $(this).css('color', 'black');
+    // }
+    // console.log(currentPage);
     switch (state) {
         case 1:
             menu(pageName);
@@ -90,21 +97,31 @@ function renderText(arr, index, parent) {
     }
 }
 
+/**
+ *  This is the continue to next "Page" function
+ *  It essentially replaces the "Click here to continue"
+ *  To "Next ->"
+ */
 function contDiv() {
+    /* TODO: Ending Screen. But For Testing Purposes Wrap around to index? */
     console.log(currentPage);
+    /* Logic is this: Put ./html/ if the current Page is index.html otherwise, go the corresponding "chapter" */
+    let href = `${currentPage < 0 ? "./html/" : "./"}chapter${currentPage < 0 ? 1 : (currentPage + 2)}.html`;
     if (currentPage == 7) {
-        $('#interactive_text')[0].innerHTML = 
+        // $('#interactive_text')[0].innerHTML = 
+        // `
+        // <a href="../index.html">
+        //     Next ->
+        // </a>
+        // `;
+        href = "../index.html";
+    }
+
+    /* Normal Routing to narratives/index */
+    $('#interactive_text')[0].innerHTML = 
         `
-        <a href="../index.html">
+        <a href="${href}">
             Next ->
         </a>
         `;
-    } else {
-        $('#interactive_text')[0].innerHTML = 
-            `
-            <a href="${currentPage < 0 ? "./html/" : "./"}chapter${currentPage < 0 ? 1 : (currentPage + 2)}.html">
-                Next ->
-            </a>
-            `;
-    }
 }
