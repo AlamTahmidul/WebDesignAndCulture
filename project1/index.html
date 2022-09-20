@@ -14,21 +14,27 @@
         <!-- 3. Launch the Page Builder -->
         <script>
             $(document).ready(function() {
-                buildPage('The Game', -1)
+                buildPage('Into the Unknown', -1)
             });
         </script>
     </head>
     <body>
         <div id="container">
             <div id="intro">
-                <h1 id="pageHeader">Chapter 1: Turbulence</h1>
-                <p id="pageHeader_Content">
-                    Ominous Poem/Quote Here...
+                <!-- <h1 id="pageHeader">Into the Unknown</h1> -->
+                <style>
+                    #pageHeader_Content {
+                        text-align: center;
+                        line-height: 2.6rem;
+                    }
+                </style>
+                <p id="pageHeader_Content" class="_italics">
+                    It all started like this...
                 </p>
             </div>
-    
-            <div id="thoughts">
-                <h3>You: <em>Where Am I?</em></h3>
+
+            <div id="interactive">
+                <h4 id="interactive_text">Click here to continue...</h4>
             </div>
         </div>
     </body>

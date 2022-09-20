@@ -1,12 +1,19 @@
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+/* Raw elements */
 body {
     background-color: transparent;
 }
 
-#intro {
+a {
+    text-decoration: none;
+    color: wheat;
+}
+
+/* IDs and Classes */
+
+#intro, #interactive {
     /* width: auto; */
     position: absolute;
     left: 50%;
@@ -24,6 +31,14 @@ body {
     color: peachpuff;
 }
 
+#interactive {
+    bottom: 25%;
+}
+
+#interactive_text {
+    bottom: 0%;
+}
+
 /* Classes with common understandings */
 ._breatheBg {
     background: rgb(102,51,153);
@@ -34,6 +49,10 @@ body {
 
 ._breathe {
     animation: breathe 3s ease-in-out 0s infinite alternate;
+}
+
+._italics {
+    font-style: italic;
 }
 
 /* KEYFRAMES TO DEFINE */
@@ -61,6 +80,7 @@ body {
     0% {
         /* background-color: transparent; */
         background-position: 0% 50%;
+        color: wheat;
     }
     50% {
         background-position: 100% 50%;
@@ -68,5 +88,6 @@ body {
     100% {
         /* background-color: black; */
         background-position: 0% 50%;
+        color: whitesmoke;
     }
 }
