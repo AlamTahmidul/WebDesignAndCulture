@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>The New Day</title>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+        <!-- Use Script to define how the page should look -->
+
+        <!-- This setup was used in Professor McKenna's Course Website HTML. Uses a builder design pattern -->
+        <!-- 1. Import jQuery -->
+        <script src="./../js/jquery-3.6.1.min.js"></script>
+        <!-- 2. Import Page Builder Script -->
+        <script src="./../js/pageBuilder.js"></script>
+        <!-- 3. Launch the Page Builder -->
+        <script>
+            $(document).onReady()
+            {
+                buildPage('home', -1);
+            }
+        </script>
+    </head>
+    <body class="_breatheBg">
+        <div id="container">
+            <div id="intro _breathe">
+                <h1 id="pageHeader">Chapter 1: Turbulence</h1>
+                <p id="pageHeader_Content">
+                    Ominous Poem/Quote Here...
+                </p>
+            </div>
+
+            <div id="thoughts">
+                <h3>You: <em>Where Am I?</em></h3>
+            </div>
+        </div>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
