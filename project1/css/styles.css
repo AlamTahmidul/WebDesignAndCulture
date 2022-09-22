@@ -65,20 +65,22 @@ a {
 @keyframes breathe {
     0% {
         background-color: transparent;
+        opacity: 15%;
         color: peachpuff;
-        box-shadow:
+        /* box-shadow:
             0 0 0 0 transparent,
             0 0 0 0 transparent,
-            0 0 0 0 transparent;
+            0 0 0 0 transparent; */
         background-size: contain;
     }
     100% {
-        background-color: black;
+        /* background-color: black; */
         color: whitesmoke;
-        box-shadow:
+        opacity: 100%;
+        /* box-shadow:
         3px 3px 3px 3px rebeccapurple,
         6px 6px 6px 6px red,
-        9px 9px 9px 9px black;
+        9px 9px 9px 9px black; */
     }
 }
 

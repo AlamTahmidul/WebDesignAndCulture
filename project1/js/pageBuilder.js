@@ -8,6 +8,9 @@ let currentPage;
  * @param {Number} state 
  */
 function buildPage(pageName, state) {
+    // Load Data
+    loadData();
+
     // Set the page title dynamically
     $('title')[0].innerHTML = $('title').innerText = pageName;
 
@@ -48,6 +51,9 @@ function buildPage(pageName, state) {
         case 7:
             menu(pageName);
             break;
+        case 8:
+            eventManagement(pageName);
+            break;
         default:
             menu(pageName);
     }
@@ -74,6 +80,17 @@ const arr = [
     ]
 ];
 
+let randomWords = [];
+
+function loadData() {
+    /* Loads Random Words */
+    $.getJSON("./../data/randomWords.json", randomWords,
+        function (data, textStatus, jqXHR) {
+            randomWords = data.randomWords;
+        }
+    );
+}
+
 function menu(pageName) {
     if (Math.floor(Math.random()*100) < 30)
     {
@@ -95,7 +112,7 @@ function renderText(arr, index, parent) {
         return;
     }
     if (index < arr.length) {
-        parent.append('<br/>' + arr[index]);
+        parent.append(arr[index] + '</br>');
     } else {
         contDiv();
     }
@@ -122,4 +139,8 @@ function contDiv() {
     });
     // Change Text
     $('#interactive input')[0].value = 'Next ->';
+}
+
+function eventManagement(pageName) {
+    const event = $('#event');
 }
