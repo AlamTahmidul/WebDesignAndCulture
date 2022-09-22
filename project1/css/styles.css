@@ -13,7 +13,7 @@ a {
 
 /* IDs and Classes */
 
-#intro, #interactive {
+#intro {
     /* width: auto; */
     position: absolute;
     left: 50%;
@@ -27,11 +27,17 @@ a {
     font-weight: 50;
 }
 
+#pageHeader_Content {
+    text-align: center;
+    line-height: 2.6rem;
+}
+
 #thoughts {
     color: peachpuff;
 }
 
 #interactive {
+    text-align: center;
     bottom: 25%;
 }
 

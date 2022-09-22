@@ -14,7 +14,14 @@ function buildPage(pageName, state) {
     // Set the currentPage to whatever the "state" was passed in
     currentPage = state;
 
-    console.log($('body'));
+    // Add Interactive Element at the end of the paragraph...
+    const interactive = 
+        `<div id="interactive">
+            <input type="button" value="Click here to continue..."  />
+        </div>`
+    $('#intro').append(interactive);
+
+    // console.log($('body'));
     // if ($(this).css('background-color') === 'white') {
     //     $(this).css('color', 'black');
     // }
@@ -54,9 +61,10 @@ let i = -1;
 const arr = [
     [
         "Where did I go wrong?",
-        "It was on the left this entire time..."
+        ""
     ],
     [
+        "It was on the left this entire time...",
         "This is the last time.",
         "After this, this is game over..."
     ],
@@ -73,7 +81,7 @@ function menu(pageName) {
         $('#intro').last().addClass('_breathe');
     }
 
-    $('#interactive_text').click(function() {
+    $('#interactive input').click(function() {
         const parent = $('#pageHeader_Content');
         i += 1;
         let arrIndex = currentPage >= arr.length ? Math.floor(Math.random()*arr.length) : currentPage;
@@ -87,10 +95,6 @@ function renderText(arr, index, parent) {
         return;
     }
     if (index < arr.length) {
-        // let newP = '<p>' + arr[index] + '</p>';
-        // console.log($(id));
-        // $(id).last().innerHTML.append(newP);
-
         parent.append('<br/>' + arr[index]);
     } else {
         contDiv();
@@ -104,24 +108,18 @@ function renderText(arr, index, parent) {
  */
 function contDiv() {
     /* TODO: Ending Screen. But For Testing Purposes Wrap around to index? */
-    console.log(currentPage);
+
     /* Logic is this: Put ./html/ if the current Page is index.html otherwise, go the corresponding "chapter" */
     let href = `${currentPage < 0 ? "./html/" : "./"}chapter${currentPage < 0 ? 1 : (currentPage + 2)}.html`;
     if (currentPage == 7) {
-        // $('#interactive_text')[0].innerHTML = 
-        // `
-        // <a href="../index.html">
-        //     Next ->
-        // </a>
-        // `;
         href = "../index.html";
     }
 
     /* Normal Routing to narratives/index */
-    $('#interactive_text')[0].innerHTML = 
-        `
-        <a href="${href}">
-            Next ->
-        </a>
-        `;
+    // On-click Redirect
+    $('#interactive input').click(function() {
+        window.location.href = href;
+    });
+    // Change Text
+    $('#interactive input')[0].value = 'Next ->';
 }
