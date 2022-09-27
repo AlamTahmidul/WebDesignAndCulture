@@ -1,5 +1,10 @@
-export function menuYeet(pageName) {
-    // $('body').last().addClass('_breatheBg');
-    // $('#intro').last().addClass('_breathe');
-    console.log($(document));
+export default class MenuYeet {
+    constructor(pageName, state) {
+        this.pageName = pageName;
+        this.state = state;
+    }
+
+    foo() {
+        console.log(this.pageName, this.state);
+    }
 }

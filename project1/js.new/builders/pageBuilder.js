@@ -1,14 +1,5 @@
-// import MenuYeet from './pages/menu.js';
-
 let currentPage;
 let inventory = [], sanity = 100;
-// function test() {
-//     alert("onload...");
-//     const my = new MenuYeet("YES", 47);
-//     my.foo();
-// }
-// // document.onload = test();
-// document.onload = buildPage();
 
 function loadData(tag) {
     /* Loads Random Words */
@@ -40,10 +31,13 @@ function loadData(tag) {
  * @param {String} pageName 
  * @param {Number} state 
  */
-function buildPage(pageName, state) {
+function buildPage(pageName, state, callback = undefined) {
+    if (callback) {
+        callback();
+    }
     // Set the page title dynamically
     $('title')[0].innerHTML = $('title').innerText = pageName;
-    // console.log(window.location);
+
     // Set the currentPage to whatever the "state" was passed in
     currentPage = state;
 
@@ -136,7 +130,7 @@ const endNoEscape = [
 let randomWords = [];
 
 function menu(pageName) {
-    if (Math.floor(Math.random()*100) < 100 - sanity || currentPage === -1)
+    if (Math.floor(Math.random()*100) < 30 || currentPage === -1)
     {
         $('body').last().addClass('_breatheBg');
         $('#intro').last().addClass('_breathe');
@@ -194,10 +188,9 @@ function eventManagement(pageName, state) {
 }
 
 function spawnWords(tag, randomWords) {
-    let poolLength = Math.max(Math.floor(Math.random() * randomWords.length), 1);
+    let poolLength = Math.floor(Math.random() * (randomWords.length - 1)) + 1;
     console.log(poolLength);
     const randomButton = Math.floor(Math.random() * poolLength);
-    console.log(randomButton);
     const randomEvent = Math.floor(Math.random() * 4) + 1;
     // console.log(poolLength);
     console.log(randomWords)
@@ -206,8 +199,7 @@ function spawnWords(tag, randomWords) {
         // Define a random position on screen
         const posX = Math.floor(Math.random() * 101);
         const posY = Math.floor(Math.random() * 101);
-        const value = randomWords[Math.floor(Math.random()*(randomWords.length))];
-        console.log(j === randomButton)
+        const value = randomWords[Math.floor(Math.random()*(randomWords.length - 1))];
         // console.log("POSX: " + posX + ", POSY: " + posY);
         const button = `
         <input 
@@ -216,10 +208,9 @@ function spawnWords(tag, randomWords) {
             style= 
                 '
                     position: absolute;
-                    transform: rotate(${-1 * Math.floor(Math.random()*361)}deg);
+                    transform: rotate(${-1 * Math.floor(Math.random()*91)}deg);
                     left: ${posX}%;
                     top: ${posY}%;
-                    ${randomButton === j ? "color: #ff0000;" : "color: #ff00ff;"}
                 '
             class='thoughtButton'
             onclick="${j === randomButton ? ("location.href=\'" + './event' + randomEvent + '.html\'') : "location.reload()\""}

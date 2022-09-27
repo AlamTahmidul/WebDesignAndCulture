@@ -39,6 +39,7 @@ a {
 #pageHeader_Content {
     text-align: center;
     line-height: 2.6rem;
+    font-size: 18pt;
 }
 
 #thoughts {
@@ -60,10 +61,9 @@ a {
 
 /* Classes with common understandings */
 ._breatheBg {
-    background: rgb(102,51,153);
-    background: linear-gradient(90deg, rgba(102,51,153,1) 0%, rgba(220,20,60,1) 50%, rgba(0,0,0,1) 100%);
-    background-size: 250% 250%;
-    animation: breatheBg 6s ease-in-out 0s infinite alternate;
+    /* background: rgb(102,51,153); */
+    /* background-color: darkgray; */
+    animation: breatheBg 3s ease-in-out 0s infinite alternate;
 }
 
 ._breathe {
@@ -78,8 +78,7 @@ a {
 @keyframes breathe {
     0% {
         background-color: transparent;
-        opacity: 15%;
-        color: peachpuff;
+        color: black;
         /* box-shadow:
             0 0 0 0 transparent,
             0 0 0 0 transparent,
@@ -87,9 +86,7 @@ a {
         background-size: contain;
     }
     100% {
-        /* background-color: black; */
-        color: whitesmoke;
-        opacity: 100%;
+        color: white;
         /* box-shadow:
         3px 3px 3px 3px rebeccapurple,
         6px 6px 6px 6px red,
@@ -99,7 +96,7 @@ a {
 
 @keyframes breatheBg {
     0% {
-        /* background-color: transparent; */
+        background-color: transparent;
         background-position: 0% 50%;
         color: wheat;
     }
@@ -107,7 +104,7 @@ a {
         background-position: 100% 50%;
     }
     100% {
-        /* background-color: black; */
+        background-color: darkgray;
         background-position: 0% 50%;
         color: whitesmoke;
     }
