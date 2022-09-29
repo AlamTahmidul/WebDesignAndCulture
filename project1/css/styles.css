@@ -55,6 +55,10 @@ a {
     bottom: 0%;
 }
 
+#intro input {
+    animation: breatheInv 3s ease-in-out 0s infinite alternate;
+}
+
 .thoughtButton {
     background-color: transparent;
 }
@@ -98,7 +102,7 @@ a {
     0% {
         background-color: transparent;
         background-position: 0% 50%;
-        color: wheat;
+        /* color: wheat; */
     }
     50% {
         background-position: 100% 50%;
@@ -106,6 +110,22 @@ a {
     100% {
         background-color: darkgray;
         background-position: 0% 50%;
-        color: whitesmoke;
+        /* color: whitesmoke; */
+    }
+}
+
+@keyframes breatheInv {
+    0% {
+        color: blue;
+        border-color: red;
+
+    }
+    50% {
+        color: royalblue;
+    }
+    100% {
+        color: purple;
+        border-color: blue;
+        
     }
 }

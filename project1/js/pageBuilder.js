@@ -1,7 +1,13 @@
 // import MenuYeet from './pages/menu.js';
 
 let currentPage;
-let inventory = [], sanity = 100;
+// The variable 'sanity' is for the sane level that the player has. Lower the number, the more unstable the character is
+let inventory = [], sanity, defaultSanity = 0;
+
+// Level Stuff
+let sanityDecayPerLevel = 0.9;
+let incorrectSanityDecay = 0.05;
+
 // function test() {
 //     alert("onload...");
 //     const my = new MenuYeet("YES", 47);
@@ -28,8 +34,6 @@ function loadData(tag) {
     //     }
     // );
 
-    // Load from localstorage
-
 }
 
 /**
@@ -43,18 +47,18 @@ function loadData(tag) {
 function buildPage(pageName, state) {
     // Set the page title dynamically
     $('title')[0].innerHTML = $('title').innerText = pageName;
-    // console.log(window.location);
+
     // Set the currentPage to whatever the "state" was passed in
     currentPage = state;
-
+    if (currentPage == -1)
+        localStorage.removeItem('sanity');
+    sanity = localStorage.getItem('sanity');
+    if (sanity)
+        sanity = Number(sanity);
+    else sanity = 100;
     if (currentPage < 100)
         createInteractive("#intro");
 
-    // console.log($('body'));
-    // if ($(this).css('background-color') === 'white') {
-    //     $(this).css('color', 'black');
-    // }
-    // console.log(currentPage);
     switch (state) {
         case 1:
         case 2:
@@ -83,7 +87,10 @@ function createInteractive(tag, p = '#pageHeader_Content', a = arr) {
     // Add Interactive Element at the end of the paragraph...
     const interactive = 
     `<div id="interactive">
-        <input type="button" value="Click here to continue..."  />
+        <input 
+            type="button" /
+            style="animation: breatheInv ${(sanity / 100) * 3}s ease-in-out 0s infinite alternate-reverse;"
+            value="Click here to continue..."  />
     </div>`
     $(tag).append(interactive);
 
@@ -100,7 +107,7 @@ function createInteractive(tag, p = '#pageHeader_Content', a = arr) {
 }
 
 let i = -1;
-/* TODO: Put all the text and dialogues into a JSON
+/* Feature (optional): Put all the text and dialogues into a JSON
     - Save it in localstorage (might have to use JSON.stringify) or local file system (raw .json)
     - Import it with a load function and parse the JSON
  */
@@ -130,7 +137,8 @@ const endNoEscape = [
     "Can't...",
     "...be-",
     "...happening-",
-    "..."
+    "...",
+    "\n\nYou died from paranoia"
 ]
 
 let randomWords = [];
@@ -141,9 +149,7 @@ function menu(pageName) {
         $('body').last().addClass('_breatheBg');
         $('#intro').last().addClass('_breathe');
     }
-    // TODO: The variable 'sane' is for the sane level that the player has. Lower the number, the more unstable the character is
-    const sane = 0;
-    if (Math.floor(Math.random()*100) >= sane && currentPage != -1) {
+    if (Math.floor(Math.random()*100) > sanity && currentPage != -1) {
         loadData($('#intro'));
     }
 }
@@ -180,6 +186,7 @@ function contDiv() {
     // On-click Redirect
     $('#interactive input').click(function() {
         window.location.href = href;
+        localStorage.setItem('sanity', String(sanity*0.9)); // Save Sanity Level for Future Requests
     });
     // Change Text
     $('#interactive input')[0].value = currentPage === 100 ? "Start Over?" : 'Next ->';
@@ -211,10 +218,12 @@ function spawnWords(tag, randomWords) {
         // console.log("POSX: " + posX + ", POSY: " + posY);
         const button = `
         <input 
+            class="r_button"
             type='button'
             value="${value}"
             style= 
                 '
+                    animation: breatheInv ${(sanity / 100) * 3}s ease-in-out 0s infinite alternate-reverse;
                     position: absolute;
                     transform: rotate(${-1 * Math.floor(Math.random()*361)}deg);
                     left: ${posX}%;
