@@ -2,11 +2,11 @@
 
 let currentPage;
 // The variable 'sanity' is for the sane level that the player has. Lower the number, the more unstable the character is
-let inventory = [], sanity, defaultSanity = 0;
+let inventory = [], sanity, defaultSanity = 30;
 
 // Level Stuff
 let sanityDecayPerLevel = 0.9;
-let incorrectSanityDecay = 0.05;
+let incorrectSanityDecay = 0.3;
 
 // function test() {
 //     alert("onload...");
@@ -50,15 +50,21 @@ function buildPage(pageName, state) {
 
     // Set the currentPage to whatever the "state" was passed in
     currentPage = state;
+
+    // Sanity Stuff
     if (currentPage == -1)
         localStorage.removeItem('sanity');
     sanity = localStorage.getItem('sanity');
     if (sanity)
         sanity = Number(sanity);
-    else sanity = 100;
+    else sanity = defaultSanity;
+
+    // Check endgame
+    if (sanity < 3) {
+        currentPage = state = 100;
+    }
     if (currentPage < 100)
         createInteractive("#intro");
-
     switch (state) {
         case 1:
         case 2:
@@ -117,18 +123,39 @@ const arr = [
         "I was sure that this is way out.",
         "I shouldn't have trusted that Psychic.",
         "I am in too deep.",
-        "The only way is forward..."
+        "The only way is forward? ",
+        "..."
+    ],
+    [
+        "The lefts and rights are my only options...",
+        "... Wait ...",
+        "...",
+        "These texts...",
+        "...",
+        "Maybe I can click on them?...",
+        "..."
     ],
     [
         "But to be honest,",
         "I don't know if I deserve this...",
+        "I have escaped once",
+        "Maybe once more?",
+        "..."
     ],
     [
-        "It was on the left this entire time...",
-        "This is the last time.",
+        "This-",
+        "-is-",
+        "-the last time...",
+        "...",
         "After this...",
         "... game over...",
-    ]
+    ],
+    [
+        "Being on the same wavelength as others,",
+        "I am the only one",
+        "Leering into the strength of brothers",
+        "I can only learn..."
+    ],
 ];
 
 const endNoEscape = [
@@ -148,8 +175,9 @@ function menu(pageName) {
     {
         $('body').last().addClass('_breatheBg');
         $('#intro').last().addClass('_breathe');
+        $('#intro').css(`animation-duration: ${(sanity/100)*3}s`)
     }
-    if (Math.floor(Math.random()*100) > sanity && currentPage != -1) {
+    if (currentPage != -1) {
         loadData($('#intro'));
     }
 }
@@ -195,13 +223,11 @@ function contDiv() {
 function eventManagement(pageName, state) {
     const event = $('#event');
     loadData(event);
-    if (state == 11) {
-        console.log("EVENT PAGE!");
-    }
+    
 }
 
 function spawnWords(tag, randomWords) {
-    let poolLength = Math.max(Math.floor(Math.random() * randomWords.length), 1);
+    let poolLength = Math.max(Math.floor(Math.random() * randomWords.length), 2);
     console.log(poolLength);
     const randomButton = Math.floor(Math.random() * poolLength);
     console.log(randomButton);
@@ -214,7 +240,7 @@ function spawnWords(tag, randomWords) {
         const posX = Math.floor(Math.random() * 101);
         const posY = Math.floor(Math.random() * 101);
         const value = randomWords[Math.floor(Math.random()*(randomWords.length))];
-        console.log(j === randomButton)
+        console.log(j === randomButton);
         // console.log("POSX: " + posX + ", POSY: " + posY);
         const button = `
         <input 
@@ -223,19 +249,22 @@ function spawnWords(tag, randomWords) {
             value="${value}"
             style= 
                 '
-                    animation: breatheInv ${(sanity / 100) * 3}s ease-in-out 0s infinite alternate-reverse;
                     position: absolute;
                     transform: rotate(${-1 * Math.floor(Math.random()*361)}deg);
                     left: ${posX}%;
                     top: ${posY}%;
-                    ${randomButton === j ? "color: #ff0000;" : "color: #ff00ff;"}
                 '
             class='thoughtButton'
-            onclick="${j === randomButton ? ("location.href=\'" + './event' + randomEvent + '.html\'') : "location.reload()\""}
+            onclick="${j === randomButton ? ("location.href=\'" + './event' + randomEvent + '.html\'\"') : "location.reload()\""}
              \/>`;
         tag.prepend(button);
+        if (j !== randomButton)
+        {
+            localStorage.setItem('sanity', String(sanity * sanityDecayPerLevel));
+        }
         // console.log(tag);}
     }
+    $('input[type=button] .thoughtButton').draggable({cancel:false});
 }
 
 function end() {

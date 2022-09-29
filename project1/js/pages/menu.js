@@ -1,4 +1,4 @@
-export default class MenuYeet {
+class MenuYeet {
     constructor(pageName, state) {
         this.pageName = pageName;
         this.state = state;
