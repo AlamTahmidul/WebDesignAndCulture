@@ -1,0 +1,10 @@
+ComponentBuilder
+    - Create Components (i.e. div, input, p)
+    - Add CSS (i.e. margin, padding)
+    - Add/Modify Classes and IDs
+PageBuilder
+    ...
+StorageManager
+    - Store Information either Locally (inside /data) or LocalStorage (Browser Storage)
+Driver
+    - Serves as the "main"
