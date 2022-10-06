@@ -4,6 +4,8 @@ ComponentBuilder
     - Add/Modify Classes and IDs
 PageBuilder
     ...
+DialogueManager
+    - Manages Dialogues
 StorageManager
     - Store Information either Locally (inside /data) or LocalStorage (Browser Storage)
 Driver
