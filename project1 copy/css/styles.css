@@ -1,0 +1,131 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* Raw elements */
+html, body {
+    width: 75%;
+    height: 75%;
+    margin: 3%;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: wheat;
+}
+
+/* IDs and Classes */
+
+#intro {
+    /* width: auto; */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 1px;
+    /* background-color: red; */
+}
+
+#intro, #container {
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+}
+
+#pageHeader, #pageHeader_Content {
+    text-align: center;
+    font-weight: 50;
+}
+
+#pageHeader_Content {
+    text-align: center;
+    line-height: 2.6rem;
+    font-size: 18pt;
+}
+
+#thoughts {
+    color: peachpuff;
+}
+
+#interactive {
+    text-align: center;
+    bottom: 25%;
+}
+
+#interactive_text {
+    bottom: 0%;
+}
+
+#intro input {
+    animation: breatheInv 3s ease-in-out 0s infinite alternate;
+}
+
+.thoughtButton {
+    background-color: transparent;
+}
+
+/* Classes with common understandings */
+._breatheBg {
+    /* background: rgb(102,51,153); */
+    /* background-color: darkgray; */
+    animation: breatheBg 3s ease-in-out 0s infinite alternate;
+}
+
+._breathe {
+    animation: breathe 3s ease-in-out 0s infinite alternate;
+}
+
+._italics {
+    font-style: italic;
+}
+
+/* KEYFRAMES TO DEFINE */
+@keyframes breathe {
+    0% {
+        background-color: transparent;
+        color: black;
+        /* box-shadow:
+            0 0 0 0 transparent,
+            0 0 0 0 transparent,
+            0 0 0 0 transparent; */
+        background-size: contain;
+    }
+    100% {
+        color: white;
+        /* box-shadow:
+        3px 3px 3px 3px rebeccapurple,
+        6px 6px 6px 6px red,
+        9px 9px 9px 9px black; */
+    }
+}
+
+@keyframes breatheBg {
+    0% {
+        background-color: transparent;
+        background-position: 0% 50%;
+        /* color: wheat; */
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-color: darkgray;
+        background-position: 0% 50%;
+        /* color: whitesmoke; */
+    }
+}
+
+@keyframes breatheInv {
+    0% {
+        color: blue;
+        border-color: red;
+
+    }
+    50% {
+        color: royalblue;
+    }
+    100% {
+        color: purple;
+        border-color: blue;
+        
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>The New Day</title>
+        <link rel="stylesheet" type="text/css" href="./../css/styles.css"/>
+        <!-- Use Script to define how the page should look -->
+
+        <!-- This setup was used in Professor McKenna's Course Website HTML. Uses a builder design pattern -->
+        <!-- 1. Import jQuery -->
+        <script src="./../js/common/jquery-3.6.1.min.js"></script>
+        <!-- 2. Import Page Builder Script -->
+        <script src="./../js/pageBuilder.js"></script>
+        <!-- 3. Launch the Page Builder -->
+        <script>
+            $(document).ready(function() {
+                buildPage('| || | |', 9)
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="event">
+                Welcome to the Hall of the Lost.</br>
+                Unfortunately, this is not where you should be.</br>
+                Try Again? After all, your chosen path has been set...
+            </div>
+            <div>
+                <input type="button" value="Find a Different Path ->" onclick="location.href='../index.html'"/>
+            </div>
+        </div>
+    </body>
+</html>

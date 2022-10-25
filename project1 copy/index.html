@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>The New Day</title>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+        <!-- Use Script to define how the page should look -->
+
+        <!-- This setup was used in Professor McKenna's Course Website HTML. Uses a builder design pattern -->
+        <!-- 1. Import jQuery -->
+        <script src="./js/common/jquery-3.6.1.min.js"></script>
+        <!-- <script type="module" src="./js/pages/menu.js"></script> -->
+        <!-- 2. Import Page Builder Script -->
+        <!-- <script type="module" src="./js/pageBuilder.js"></script> -->
+        <script src="./js/pageBuilder.js"></script>
+        <!-- 3. Launch the Page Builder -->
+        <script>
+            $(document).ready(function() {
+                buildPage('Into the Unknown', -1)
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="intro">
+                <p id="pageHeader_Content" class="_italics">
+                    Enter the Unknown?
+                </p>
+             </div>
+        </div>
+    </body>
+</html>
