@@ -1,0 +1,23 @@
+Mandatory:
+    - Sanity Level UI
+    - A Text-Box for the "ending"
+    - Audio Cues
+        -- Breathing?
+        -- Door Opening?
+        -- Footsteps
+        -- Wind
+        -- Rustling
+    - Mini Puzzles
+    - Time Limits
+    - Other Interactive Experiences
+        -- Small Chat Simulator?
+        -- Cryptic messages
+    - Dialogues...
+    - Allow Players to Make Choices
+        - Prompt the Player to take Actions
+    - Inventory System
+        - Items
+        - "Journal"
+            - Keeping track of the choices and stuff?
+                Do something with it...
+                    Launch a sub-scenario based on a certain branch of choices?...
