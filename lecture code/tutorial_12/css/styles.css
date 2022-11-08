@@ -1,0 +1,66 @@
+* {
+    --swatch-primary: #ffe0bd; /* peachpuff */
+    --swatch-secondary: #fdcdc0;
+    --swatch-tertiary: #8f7d67;
+    --swatch-quaternary: #2e3045;
+    --swatch-quinary: #1b1b1f;
+}
+
+html, body {
+    margin: 0;
+    /* height: 100%; */
+    background-color: var(--swatch-quaternary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--swatch-primary);
+    overflow: hidden;
+}
+
+#fadeID {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0%);
+    color: var(--swatch-quaternary);
+    text-align: center;
+    padding: 15% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: opacity 2s;
+}
+
+#wrapperID {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#wrapperID h1 {
+    font-size: 28px;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    margin: 0 0 5px 0;
+}
+
+#wrapperID input {
+    min-width: fit-content(20em);
+    height: 30px;
+    border: 1px solid var(--swatch-primary);
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+#wrapperID input:hover {
+    border: 1px solid var(--swatch-primary);
+    background-color: var(--swatch-primary);
+    color: var(--swatch-quaternary)
+}
+
+#linksID {
+    width: 100%;
+    height: 60px;
+    margin: 15px auto;
+    padding-bottom: 20px;
+}

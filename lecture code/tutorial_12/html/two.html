@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tutorial 12 | Page Two</title>
+        <link href="../css/styles.css" type="text/css" rel="stylesheet" />
+        <script src="../js/script_01.js"></script>
+    </head>
+    <body>
+        <!-- this ID will be an overlay that fades out -->
+        <div id="fadeID">
+
+        </div>
+        <!-- T\this is the main wrapper ID -->
+        <div id="wrapperID">
+            <div>
+                <!-- this ID contains links to other pages -->
+                <p id="linksID">
+                    <input type="button" value="Page 1" id="one" onclick="goToPage(this.id)"/>
+                    <input type="button" value="Page 2" id="two" onclick="goToPage(this.id)"/>
+                    <input type="button" value="Page 3" id="three" onclick="goToPage(this.id)"/>
+                    <input type="button" value="Page 4" id="four" onclick="goToPage(this.id)"/>
+                </p>
+            </div>
+
+            <!-- this ID will ultimately feature the user's name -->
+            <h1 id="userID">Carry-Over Values</h1>
+
+            <!-- this ID will have buttons to add/subtract points -->
+            <div id="changePointsID">
+                <input type="button" value="Add Points" onclick="add()" onmouseenter="add()" />
+                <input type="button" value="Subtract Points" onclick="sub()" onmouseenter="sub()" />
+            </div>
+
+            <!-- this ID will feature the number of accumulated points -->
+            <div>
+                <p id="scoreID"></p>
+            </div>
+        </div>
+    </body>
+</html>
