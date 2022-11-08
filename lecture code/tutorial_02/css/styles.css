@@ -1,0 +1,41 @@
+* {
+    font-family: 'Segoe UI';
+}
+
+body {
+    background-color: peachpuff;
+}
+
+#wrapper {
+    max-width: 50%;
+    margin-left: 25%;
+    margin-top: 15%;
+}
+
+h1, h2, p {
+    box-shadow: none;
+    animation-timing-function: ease-in;
+}
+
+h1:hover, h2:hover, p:hover {
+    background-color: black;
+    color: wheat;
+    animation: expCol 1s infinite;
+}
+
+@keyframes expCol {
+    from {
+        top: 0px;
+        box-shadow: 
+            0 0 0 0, 
+            0 0 0 0, 
+            0 0 0 0;
+    }
+    to {
+        top: 20px;
+        box-shadow: 
+        3px 3px 3px 3px blueviolet, 
+        6px 6px 6px 6px magenta, 
+        9px 9px 9px 9px red;
+    }
+}

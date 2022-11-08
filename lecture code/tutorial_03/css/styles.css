@@ -1,0 +1,58 @@
+body {
+    background-color: peachpuff;
+    margin: 0;
+}
+
+#wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkviolet;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    color: maroon;
+    text-align: center;
+}
+
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: darkolivegreen;
+    font-weight: 500;
+    text-align: justify;
+}
+
+h1, h2, p {
+    box-shadow: none;
+    padding: 10px;
+    animation-timing-function: ease-in-out;
+}
+
+h1:hover, h2:hover, p:hover {
+    /* background-color: transparent; */
+    /* color: wheat; */
+    animation: expCol 1s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes expCol {
+    0% {
+        top: 0px;
+        box-shadow: 
+            0 0 0 0, 
+            0 0 0 0, 
+            0 0 0 0;
+    }
+    100% {
+        top: 20px;
+        box-shadow: 
+        3px 3px 3px 3px blueviolet, 
+        6px 6px 6px 6px magenta, 
+        9px 9px 9px 9px red;
+    }
+}

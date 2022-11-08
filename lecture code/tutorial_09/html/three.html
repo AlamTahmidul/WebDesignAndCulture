@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tutorial 09 | Three</title>
+        <link href="./../css/styles.css" type="text/css" rel="stylesheet" />
+        <script>
+            // Creating an array (Method 1)
+            var rivers = new Array();
+                rivers[0] = "The Amazon";
+                rivers[1] = "The Mississippi";
+                rivers[2] = "The Nile";
+            // console.log(rivers[2]);
+
+            // Parallel Arrays
+            // Data for each array is connected by the index number
+            var first = new Array();
+                first[0] = "Mark";
+                first[1] = "Olivia";
+                first[2] = "Carrie";
+
+            var last = new Array();
+                last[0] = "Arias";
+                last[1] = "Smith";
+                last[2] = "Snow";
+
+            var n = Math.floor(Math.random() * 3);
+            // console.log(first[n] + " " + last[n]);
+
+            // Creating an array (Method 2)
+            var cities = new Array("New York", "Chicago", "Los Angeles");
+
+            // Creating an array (Method 3)
+            var states = ["New York", "Illinois", "California"];
+            // console.log(cities[n] + " " + states[n]);
+
+            // for loop - statement to repeat code
+            // for (var i = 10; i > 0; i--) {
+            //     console.log(i);
+            // }
+
+            var pets = ["dogs", "cats", "birds", "fish", "reptiles", "amphibians", "dinosaurs"];
+            for (var i = 0; i < pets.length; i++) {
+                console.log(pets[i]);
+            }
+        </script>
+    </head>
+    <body>
+       <div id="menu">
+            <p>
+                <a href="./../index.html">One</a>
+                <a href="./two.html">Two</a>
+                <a href="./three.html">Three</a>
+                <a href="./four.html">Four</a>
+            </p>
+       </div>
+       <div id="wrapper">
+            <h1 id="heading">JavaScript Tutorial 09 | Three</h1>
+            <div id="image">
+                
+            </div>
+            <input type="button" value="Click Here" onclick="" />
+        </div>
+    </body>
+</html>

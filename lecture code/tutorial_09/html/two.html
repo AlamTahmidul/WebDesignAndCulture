@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tutorial 09 | Two</title>
+        <link href="./../css/styles.css" type="text/css" rel="stylesheet" />
+        <script>
+            // Possible values of VISIBILITY
+            // "visible" or "hidden"
+            let v = {visible: "visible", collapsible: "inherit"};
+            function toggleVisibility() {
+                // Conditional statement determines whether the value is "visible" or "hidden"
+                if (v.visible == "visible") {
+                    v.visible = "hidden";
+                    v.collapsible = "none";
+                } else {
+                    v.visible = "visible";
+                    v.collapsible = "inherit";
+                }
+                document.getElementById("image").style.visibility = v.visible;
+                document.getElementById("image").style.display = v.collapsible;
+            }
+        </script>
+    </head>
+    <body>
+       <div id="menu">
+            <p>
+                <a href="./../index.html">One</a>
+                <a href="./two.html">Two</a>
+                <a href="./three.html">Three</a>
+                <a href="./four.html">Four</a>
+            </p>
+       </div>
+       <div id="wrapper">
+            <h1 id="heading">JavaScript Tutorial 09 | Two</h1>
+            <div id="image">
+                <img src="./../images/anime1.jpg" alt="image" />
+            </div>
+            <input type="button" value="Hide/Show Image!" onclick="toggleVisibility()" />
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tutorial 09 | Four</title>
+        <link href="./../css/styles.css" type="text/css" rel="stylesheet" />
+        <script>
+            // Populate an array with paths to the six images that we used in the first page
+            var paths = new Array();
+            for (var i = 0; i < 6; i++) {
+                paths[i] = "./../images/anime" + (i + 1) + ".jpg";
+            }
+            // Then, randomly place an image into the page using a random index number
+            function randomizeImage() {
+                setInterval(function () {
+                    var n = Math.floor(Math.random() * paths.length);
+                    document.getElementById("image").innerHTML = "<img src='" + paths[n] + "' />";
+                    document.getElementById("imageName").innerText = "Now Viewing: " + paths[n].substring("./../images/".length);
+                }, 2000);
+            }
+        </script>
+    </head>
+    <body>
+       <div id="menu">
+            <p>
+                <a href="./../index.html">One</a>
+                <a href="./two.html">Two</a>
+                <a href="./three.html">Three</a>
+                <a href="./four.html">Four</a>
+            </p>
+       </div>
+       <div id="wrapper">
+            <h1 id="heading">JavaScript Tutorial 09 | Four</h1>
+            <div id="image"></div>
+            <h3 id="imageName"></h1>
+            <input type="button" value="Get Me A Random Image" onclick="randomizeImage()" />
+        </div>
+    </body>
+</html>

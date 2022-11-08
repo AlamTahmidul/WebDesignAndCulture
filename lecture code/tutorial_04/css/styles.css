@@ -1,0 +1,85 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* background-color: peachpuff; */
+    background: rgb(75,0,130);
+    background: linear-gradient(54deg, rgba(75,0,130,1) 0%, rgba(220,20,60,1) 100%);
+
+    margin: 25%;
+    text-align: center;
+}
+
+img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+#wrapper {
+    background-color: transparent;
+    animation-timing-function: ease-in-out;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#wrapper:hover {
+    animation: colorChange 1s infinite;
+    animation-direction: alternate;
+}
+
+h1 {
+    text-align: center;
+    /* width: fit-content; */
+}
+
+a {
+    display: inline-block;
+}
+
+a:any-link {
+    text-decoration: none;
+    color: lightgray;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: white;
+    background-color: black;
+    text-decoration:underline;
+}
+
+.navigation {
+    /* width: fit-content; */
+    text-align: center;
+}
+
+.navigation:hover {
+    animation: colorChange 0.5s ease-in-out 1s infinite alternate;
+    /* width:max-content; */
+    /* width: fit-content;
+    text-align: center; */
+    /* text-align: center; */
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: transparent;
+        box-shadow:
+            0 0 0 0 transparent,
+            0 0 0 0 transparent,
+            0 0 0 0 transparent;
+        background-size: contain;
+    }
+    100% {
+        background-color: rebeccapurple;
+        color: whitesmoke;
+        box-shadow:
+        3px 3px 3px 3px purple,
+        6px 6px 6px 6px greenyellow,
+        9px 9px 9px 9px peru;
+    }
+}

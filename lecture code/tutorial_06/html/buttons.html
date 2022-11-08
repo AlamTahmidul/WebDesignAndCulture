@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Buttons</title>
+        <link rel="stylesheet" type="text/css" href="./../css/styles.css"/>
+        <style type="text/css">
+            .b {
+                background-color: #2e3045;
+                border-color: #fdcdc0;
+                color: peachpuff;
+                padding: 1%;
+                border-radius: 10%;
+            }
+
+            .b:hover {
+                background-color: #fdcdc0;
+                border-color: #2e3045;
+                color: #1b1b1f;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <a href="./../index.html">Home</a>
+                <a href="./bgImg.html">Bg-Image</a>
+                <a href="./bgGrad.html">Bg-Gradient</a>
+                <a href="./iframe.html">iFrame</a>
+                <a href="./buttons.html">Buttons</a>
+                <a href="./video.html">Video</a>
+                <a href="./audio.html">Audio</a>
+            </div>
+
+            <div id="main">
+                <h1>Buttons</h1>
+
+                <!-- 
+                    Button Elements
+                    Click to open in a NEW browser window
+                -->
+
+                <input class="b" type="button" value="W3schools" onclick="window.open('http://www.w3schools.com')"/>
+                <input class="b" type="button" value="Codecademy" onclick="window.open('http://www.codecademy.com')"/>
+                <input class="b" type="button" value="GitHub" onclick="window.open('http://www.github.com')"/>
+
+                <!-- 
+                    Click to open in the SAME browser window
+                 -->
+                <input class="b" type="button" value="Bg-Image" onclick="window.location='bgImg.html'"/>
+
+            </div>
+        </div>
+    </body>
+</html>

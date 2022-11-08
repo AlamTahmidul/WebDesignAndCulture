@@ -1,0 +1,72 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: transparent;
+}
+
+#intro {
+    /* width: auto; */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: fit-content;
+    padding: 1px;
+}
+
+#pageHeader, #pageHeader_Content {
+    text-align: center;
+    font-weight: 50;
+}
+
+#thoughts {
+    color: peachpuff;
+}
+
+/* Classes with common understandings */
+._breatheBg {
+    background: rgb(102,51,153);
+    background: linear-gradient(90deg, rgba(102,51,153,1) 0%, rgba(220,20,60,1) 50%, rgba(0,0,0,1) 100%);
+    background-size: 250% 250%;
+    animation: breatheBg 6s ease-in-out 0s infinite alternate;
+}
+
+._breathe {
+    animation: breathe 3s ease-in-out 0s infinite alternate;
+}
+
+/* KEYFRAMES TO DEFINE */
+@keyframes breathe {
+    0% {
+        background-color: transparent;
+        color: peachpuff;
+        box-shadow:
+            0 0 0 0 transparent,
+            0 0 0 0 transparent,
+            0 0 0 0 transparent;
+        background-size: contain;
+    }
+    100% {
+        background-color: black;
+        color: whitesmoke;
+        box-shadow:
+        3px 3px 3px 3px rebeccapurple,
+        6px 6px 6px 6px red,
+        9px 9px 9px 9px black;
+    }
+}
+
+@keyframes breatheBg {
+    0% {
+        /* background-color: transparent; */
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        /* background-color: black; */
+        background-position: 0% 50%;
+    }
+}

@@ -1,0 +1,159 @@
+* {
+    font-family: 'Segoe UI';
+    --swatch-primary: #ffe0bd; /* peachpuff */
+    --swatch-secondary: #fdcdc0;
+    --swatch-tertiary: #8f7d67;
+    --swatch-quaternary: #2e3045;
+    --swatch-quinary: #1b1b1f;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: var(--swatch-primary);
+}
+
+p {
+    margin: 0%;
+    padding: 3%;
+    font-size: 12pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--swatch-quinary);
+    text-shadow: var(--swatch-primary);
+}
+
+#wrapper {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto; /* Top Right Bottom Right */
+    /* background-color: var(--swatch-tertiary); */
+}
+
+#top, #bottom {
+    width: 100%;
+    height: 50%;
+}
+
+/* #top {
+    background-color: var(--swatch-quaternary); 
+}
+
+#bottom {
+    background-color: var(--swatch-quinary);
+} */
+
+#left, #right {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+/* #left {
+    background-color: var(--swatch-quaternary);
+}
+
+#right {
+    background-color: var(--swatch-quinary);
+} */
+
+#top-left, #top-right, #bottom-left, #bottom-right {
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+
+#top-left {
+    background-color: var(--swatch-secondary);
+}
+
+#top-right {
+    background-color: var(--swatch-tertiary);
+}
+
+#bottom-left {
+    background-color: var(--swatch-quaternary);
+}
+
+#bottom-right {
+    background-color: var(--swatch-quinary);
+}
+
+#one {
+    width: 400px;
+    height: 200px;
+    background-color: var(--swatch-tertiary);
+    top: 50px;
+    left: 100px;
+    position: absolute;
+    z-index: 2;
+}
+
+#two {
+    width: 200px;
+    height: 300px;
+    background-color: var(--swatch-quaternary);
+    top: 150px;
+    left: 150px;
+    position: absolute;
+    z-index: 1;
+}
+
+#three {
+    width: 100px;
+    height: 400px;
+    background-color: var(--swatch-quaternary);
+    top: 175px;
+    left: 450px;
+    position: absolute;
+    z-index: 3;
+}
+
+#four {
+    width: 600px;
+    height: 50px;
+    background-color: var(--swatch-quinary);
+    top: 300px;
+    left: 50px;
+    position: absolute;
+    z-index: 4;
+}
+
+#fone {
+    width: 40%;
+    height: 20%;
+    background-color: var(--swatch-tertiary);
+    top: 5%;
+    left: 10%;
+    position: absolute;
+    z-index: 2;
+}
+
+#ftwo {
+    width: 20%;
+    height: 30%;
+    background-color: var(--swatch-quaternary);
+    top: 15%;
+    left: 15%;
+    position: absolute;
+    z-index: 1;
+}
+
+#fthree {
+    width: 10%;
+    height: 40%;
+    background-color: var(--swatch-quaternary);
+    top: 17%;
+    left: 45%;
+    position: absolute;
+    z-index: 4;
+}
+
+#ffour {
+    width: 60%;
+    height: 5%;
+    background-color: var(--swatch-quinary);
+    top: 30%;
+    left: 5%;
+    position: absolute;
+    z-index: 3;
+}
