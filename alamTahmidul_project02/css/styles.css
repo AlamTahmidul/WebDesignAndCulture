@@ -16,7 +16,17 @@ html, body {
 }
 
 .card {
-    border-radius: 3rem;
+    position: relative;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    width: auto;
+    text-align: left;
+    background-color: rgba(220, 220, 220, 0.1);
+    row-gap: 1rem;
+}
+
+.card h3 {
+    padding-left: 0.3rem;
 }
 
 #screen {
@@ -48,13 +58,12 @@ html, body {
 }
 
 #window-tab #view-tab {
-    /* background-color: var(--swatch-primary); */
     width: 30%;
     border-color: var(--swatch-light);
     border-radius: 1rem;
     border-style: solid;
     border-width: 0.1rem;
-    color: var(--swatch-secondary);
+    color: var(--swatch-light);
     vertical-align: middle;
     align-items: center;
 }
@@ -95,7 +104,7 @@ html, body {
     gap: 1rem;
     width: 90%;
     padding: 0.3rem;
-    border-color: var(--swatch-secondary);
+    border-color: var(--swatch-light);
     border-radius: 1rem;
     border-style: solid;
     border-width: 0.1rem;
@@ -107,37 +116,56 @@ html, body {
     border-radius: 1rem;
 }
 #url-box #search:hover {
-    color:var(--swatch-secondary);
-    background-color: var(--swatch-primary);
+    color:var(--swatch-light);
+    background-color: var(--swatch-dark);
     cursor: pointer;
-}
-
-#content {
-    
 }
 
 #content-body {
     position: relative;
-    gap: 1rem;
-    padding: 1rem;
-    height: 14rem;
+    height: 24rem;
+    width: 100%;
     margin-top: 1%;
     /* background-color: blue; */
-    border-color: var(--swatch-secondary);
+    border-color: var(--swatch-light);
     border-radius: 1rem;
     border-style: solid;
     border-width: 0.1rem;
+    overflow-y: auto;
+}
+
+#content-body #search-results-text {
+    padding-left: 1rem;
 }
 
 #user-interface {
     position: relative;
-    width: 97%;
+    width: 100%;
 }
 
 #dashboard-wrapper, #subscreen-wrapper {
     padding: 1rem;
     position: relative;
-    width: 50%;
+    height: fit-content;
+}
+
+#dashboard-wrapper {
+    width: 25%;
+}
+
+#subscreen-wrapper {
+    width: 75%;
+}
+
+#dashboard, #subscreen {
+    text-align: center;
+    border-color: var(--swatch-light);
+    border-radius: 1rem;
+    border-style: groove;
+    border-width: 0.1rem;
+    padding: 1rem;
+    height: max-content;
+    row-gap: 1.5rem;
 }
 
 /* Class macros: Structured like TailwindCSS */

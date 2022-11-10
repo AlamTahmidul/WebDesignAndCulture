@@ -8,10 +8,13 @@
 /**
  *  Time the player has before it expires...
  */
-let timerDuration = 5;
+ export const timerDuration = 1;
 
-
-/**
- *  Export all the variables (will be constants)
- */
-export default timerDuration;
+ /**
+  * Handles Events:
+  * 
+  *     OutOfTime: Player runs out of time
+  */
+// export const events = {
+//     OutOfTime: new CustomEvent('GameOver', {bubbles:true, detail: {text: () => "Out of Time..."}}),
+// };
