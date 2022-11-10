@@ -112,6 +112,9 @@ html, body {
     cursor: pointer;
 }
 
+#content {
+    
+}
 
 #content-body {
     position: relative;
@@ -124,6 +127,17 @@ html, body {
     border-radius: 1rem;
     border-style: solid;
     border-width: 0.1rem;
+}
+
+#user-interface {
+    position: relative;
+    width: 97%;
+}
+
+#dashboard-wrapper, #subscreen-wrapper {
+    padding: 1rem;
+    position: relative;
+    width: 50%;
 }
 
 /* Class macros: Structured like TailwindCSS */
