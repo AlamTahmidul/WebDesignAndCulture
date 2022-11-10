@@ -18,7 +18,7 @@ html, body {
 #fadeID {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0%);
+    background-color: rgba(27, 27, 31, 99%);
     color: var(--swatch-quaternary);
     text-align: center;
     padding: 15% 0 0 0;
@@ -27,6 +27,10 @@ html, body {
     left: 0;
     z-index: 1;
     transition: opacity 2s;
+}
+
+#fadeID p {
+    color: var(--swatch-primary);
 }
 
 #wrapperID {
@@ -63,4 +67,8 @@ html, body {
     height: 60px;
     margin: 15px auto;
     padding-bottom: 20px;
+}
+
+input[type=button] {
+    cursor: pointer;
 }

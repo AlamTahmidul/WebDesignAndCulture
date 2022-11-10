@@ -10,6 +10,9 @@ function sub() {
 }
 
 function goToPage(p) {
+    let params = new URLSearchParams();
+    params.append("first", JSON.stringify(first)), params.append("last", JSON.stringify(last));
+
     // By default the path is inside the html directory
     let path = "./";
     // If the current document is index.html
@@ -24,5 +27,5 @@ function goToPage(p) {
         else path = "../"; // Or: Currently, We are inside the html/ directory
         file = "index.html";
     }
-    location.href = path + file;
+    location.href = path + file + "?" + params.toString();
 }

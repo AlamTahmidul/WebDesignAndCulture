@@ -6,13 +6,25 @@
         <title>Tutorial 12 | Home</title>
         <link href="css/styles.css" type="text/css" rel="stylesheet" />
         <script src="js/script_01.js"></script>
+        <script src="js/getParams.js"></script>
+        <script>
+            let first, last; // To Store First and Last Names
+            function username() {
+                first = document.getElementById("firstID").value;
+                last = document.getElementById("lastID").value;
+                document.getElementById("userID").innerText = `Hello, ${first} ${last}`;
+                
+                document.getElementById("fadeID").style.opacity = 0;
+                setTimeout("document.getElementById('fadeID').remove()", 1600);
+            }
+        </script>
     </head>
     <body>
         <!-- this ID will be an overlay that fades out -->
         <div id="fadeID">
             <p>First Name: <input type="text" id="firstID"/></p>
-            <p>Last Name: <input type="text" id="lastID"/></p>
-            <p><input type="button" value="Submit"/></p>
+            <p>Last Name: <input type="text" id="lastID" /></p>
+            <p><input type="button" value="Submit" onclick="username()" /></p>
         </div>
         <!-- T\this is the main wrapper ID -->
         <div id="wrapperID">
@@ -27,12 +39,12 @@
             </div>
 
             <!-- this ID will ultimately feature the user's name -->
-            <h1 id="userID">Carry-Over Values</h1>
+            <h1 id="userID">Page 1</h1>
 
             <!-- this ID will have buttons to add/subtract points -->
             <div id="changePointsID">
-                <input type="button" value="Add Points" onclick="add()" onmouseenter="add()" />
-                <input type="button" value="Subtract Points" onclick="sub()" onmouseenter="sub()" />
+                <input type="button" value="Add Points" onclick="add()" />
+                <input type="button" value="Subtract Points" onclick="sub()" />
             </div>
 
             <!-- this ID will feature the number of accumulated points -->
