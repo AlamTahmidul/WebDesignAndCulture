@@ -8,7 +8,7 @@
 /**
  *  Time the player has before it expires...
  */
- export const timerDuration = 1;
+ export const timerDuration = 5;
 
  /**
   * Handles Events:
