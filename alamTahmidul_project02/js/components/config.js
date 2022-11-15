@@ -8,7 +8,7 @@
 /**
  *  Time the player has before it expires...
  */
-export const TimerDuration = 5;
+export const TimerDuration = 1;
 
 /**
  *  The Player's Objectives

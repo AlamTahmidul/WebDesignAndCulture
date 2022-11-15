@@ -40,7 +40,7 @@ const Searching = (event) => {
     }
 };
 
-function startGameTimer() {
+const startGameTimer = () => {
     // Handles Game Timer
     gameTimerHandler = setInterval(() => {
         document.getElementById("timer-text").innerText = gameTimerDuration--;
@@ -50,13 +50,30 @@ function startGameTimer() {
             // document.getElementById('tab-title').dispatchEvent(events.OutOfTime);
             clearInterval(gameTimerHandler);
 
-            /* Uncomment below to simulate game over */
-            const gameOverCard = new ItemCard("GameOver", "You Failed");
-            document.getElementById("subscreen").appendChild(gameOverCard.toHTML());
-            document.getElementById("subscreen").appendChild(new ItemCard("Redirecting", "Taking You Back to the Start...").toHTML());
-            // setTimeout(() => {
-            //     location.href = "index.html";
-            // }, 2000);
+            /* Old: Uncomment below to simulate game over */
+            // const gameOverCard = new ItemCard("GameOver", "You Failed");
+            // document.getElementById("subscreen").appendChild(gameOverCard.toHTML());
+            // document.getElementById("subscreen").appendChild(new ItemCard("Redirecting", "Taking You Back to the Start...").toHTML());
+            
+            // GameOver();
         }
     }, 1000);
+}
+
+const GameOver = () => {
+    const errorModal = document.getElementById("error-modal");
+    const GameOverNode = document.createElement('div');
+    GameOverNode.id = "game-over";
+    const titleNode = document.createElement('h1');
+    titleNode.innerText = "Game Over";
+    GameOverNode.appendChild(titleNode);
+    const descriptionNode = document.createElement('h3');
+    descriptionNode.innerText = "You Failed to Exit ... Taking You Back to the Start...";
+    GameOverNode.appendChild(descriptionNode);
+    
+    errorModal.appendChild(GameOverNode);
+    document.getElementsByTagName('body')[0].style.overflow = "hidden";
+    // setTimeout(() => {
+    //     location.href = "index.html";
+    // }, 2000);
 }
