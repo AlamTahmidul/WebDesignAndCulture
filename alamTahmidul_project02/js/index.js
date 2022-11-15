@@ -1,46 +1,46 @@
+// Import components
 // import { CommentCard } from "./components/CommentCard.js"
 import { ItemCard } from "./components/ItemCard.js"
-import {timerDuration} from "./components/config.js";
 
-let gameTimerDuration = timerDuration;
+// Import the game configurations
+import { TimerDuration, Objectives, Clues } from "./components/config.js";
+
+
+let gameTimerDuration = TimerDuration;
 let gameTimerHandler;
 
 window.onload = function () {
     // const comment = new CommentCard("Author", "This is a comment");
     // document.getElementById("wrapper-body").append(comment.toHTML());
     // document.body.innerHTML.append(comment.toHTML());
-    // console.log(comment);
+    // console.log(comment);-
 
-    const Searching = (event) => {
-        /**
-         *  TODO: See if you can load iFrames to serve multiple pages...
-         *  Or, use Cards as an alternative
-         */
-
-        // This means that the user wants to search...
-        if (event.key === "Enter" || event.type === "click") {
-            const value = document.getElementById("url").value;
-            document.getElementById("content-body").appendChild(new ItemCard("Content", value).toHTML());
-            document.getElementById("tab-title").innerText = value;
-        }
-    };
-
+    // Initialize A few things
+    // Set Event Listeners
     document.getElementById("url").addEventListener('keydown', Searching, false);
     document.getElementById("url-search").addEventListener('click', Searching, false);
 
-    // document.getElementById("url").onkeydown = (event) => {
-    //     // TODO: See if you can load iFrames to serve multiple pages...
-    //     if (event.key === "Enter") {
-    //         document.getElementById("content-body").innerHTML = event.target.value;
-    //         document.getElementById("tab-title").innerText = event.target.value;
-    //     }
-    // };
+    // In-Game Timer
+    startGameTimer();
+    // console.log("post timer handler");
 
-    // document.getElementById('tab-title').addEventListener('OutOfTime', (e) => {
-    //     console.log("Goes Here!");
-    //     alert(e.detail.text());
-    // });
+}
 
+const Searching = (event) => {
+    /**
+     *  TODO: See if you can load iFrames to serve multiple pages...
+     *  Or, use Cards as an alternative
+     */
+
+    // This means that the user wants to search...
+    if (event.key === "Enter" || event.type === "click") {
+        const value = document.getElementById("url").value;
+        document.getElementById("content-body").appendChild(new ItemCard("Content", value).toHTML());
+        document.getElementById("tab-title").innerText = value;
+    }
+};
+
+function startGameTimer() {
     // Handles Game Timer
     gameTimerHandler = setInterval(() => {
         document.getElementById("timer-text").innerText = gameTimerDuration--;

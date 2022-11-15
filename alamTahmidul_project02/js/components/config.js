@@ -8,13 +8,14 @@
 /**
  *  Time the player has before it expires...
  */
- export const timerDuration = 5;
+export const TimerDuration = 5;
 
- /**
-  * Handles Events:
-  * 
-  *     OutOfTime: Player runs out of time
-  */
-// export const events = {
-//     OutOfTime: new CustomEvent('GameOver', {bubbles:true, detail: {text: () => "Out of Time..."}}),
-// };
+/**
+ *  The Player's Objectives
+ */
+export const Objectives = [];
+
+/**
+ *  List of Clues (aka different pages serving something)
+ */
+export const Clues = [];

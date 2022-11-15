@@ -168,6 +168,12 @@ html, body {
     row-gap: 1.5rem;
 }
 
+#subscreen-iframe {
+    border: 0.3rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 /* Class macros: Structured like TailwindCSS */
 .relative {
     position: relative;
