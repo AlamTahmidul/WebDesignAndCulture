@@ -15,13 +15,19 @@ window.onload = function () {
     // document.body.innerHTML.append(comment.toHTML());
     // console.log(comment);-
 
+    setTimeout(() => {
+        document.getElementById("intro").remove();
+    }, 15000);
+
     // Initialize A few things
     // Set Event Listeners
     document.getElementById("url").addEventListener('keydown', Searching, false);
     document.getElementById("url-search").addEventListener('click', Searching, false);
 
     // In-Game Timer
-    startGameTimer();
+    setTimeout(() => {
+        startGameTimer();
+    }, 15000);
     // console.log("post timer handler");
 
 }
@@ -55,7 +61,7 @@ const startGameTimer = () => {
             // document.getElementById("subscreen").appendChild(gameOverCard.toHTML());
             // document.getElementById("subscreen").appendChild(new ItemCard("Redirecting", "Taking You Back to the Start...").toHTML());
             
-            // GameOver();
+            GameOver();
         }
     }, 1000);
 }
@@ -68,12 +74,12 @@ const GameOver = () => {
     titleNode.innerText = "Game Over";
     GameOverNode.appendChild(titleNode);
     const descriptionNode = document.createElement('h3');
-    descriptionNode.innerText = "You Failed to Exit ... Taking You Back to the Start...";
+    descriptionNode.innerText = "You Failed to Exit ... Taking You Back to the Start in 5 seconds...";
     GameOverNode.appendChild(descriptionNode);
     
     errorModal.appendChild(GameOverNode);
     document.getElementsByTagName('body')[0].style.overflow = "hidden";
-    // setTimeout(() => {
-    //     location.href = "index.html";
-    // }, 2000);
+    setTimeout(() => {
+        location.href = "index.html";
+    }, 5000);
 }
