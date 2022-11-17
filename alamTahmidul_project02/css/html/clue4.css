@@ -1,0 +1,12 @@
+@import url('./default.css');
+
+.drop-target-faint {
+    border-color: rgba(245, 222, 179, 0.02);
+    border-style: solid;
+    border-radius: 3rem;
+    width: 10rem;
+    height: 10rem;
+    text-align: center;
+    margin-left: 75%;
+    transform: translate(50%);
+}
