@@ -1,0 +1,14 @@
+@import url('./default.css');
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    display: inline-block;
+}
+
+.drop-target-faint {
+    border-color: rgba(245, 222, 179, 0.02);
+}
