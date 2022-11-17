@@ -10,18 +10,16 @@
     <script src="../js/html/final.js"></script>
 </head>
 <body>
-    <div>
-        <h3>
-            Try hovering and clicking over the words. In some cases, one the words would <span class="clue clue-intext">blink</span> up, or it might not have any visual indicators except <span class="clue">a cursor change</span>. In both cases (on click), a ping sound will play. Other times, it's just a puzzle.
-            <br/><br/>
-            <em>Did you notice how the messages section just got filled with the interacted words?</em>
+    <div id="wrapper">
+        <h1 id="end-content-title">The Endgame (?)</h1>
+        <br/><br/>
+        <h3 id="end-content-body">You have done a great job reaching this far. Honestly, I am a bit surprised that you managed to get through the last few levels. The Lorem Ipsum could've threw you off but I guess it didn't. The <p id="clue-id" class="clue" id="drag-target" ondragstart="handleDragStart(event)" draggable="true">hidden</p> interactions of course did not hold you back. I think you really enjoyed that, right? Let's see if you can <p id="true-win-id" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">leave</p>.</h3>
+        <br/><br/>
+        <h5 id="hint">Hint: Do you really want to <em>leave</em>?</h5>
+        <br/><br/>
+        <h3 id="content-ending">
+            <em>I guess you are a free man now...</em>
         </h3>
-        <br/>
-        <h2>
-            <h3>
-                <strong>Clue 0a: </strong>Type <em>puzzles</em> to continue...
-            </h3>
-        </h2>
     </div>
 </body>
 </html>

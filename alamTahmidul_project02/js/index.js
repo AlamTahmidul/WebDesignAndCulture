@@ -101,6 +101,11 @@ window.onload = function () {
                 SpawnEvent();
             } else if (updateType === "clear-messages") {
                 document.getElementById("dashboard-content").innerHTML = "";
+            } else if (updateType === "win") {
+                if (updateValue === "true") {
+                    const winModal = document.getElementById("clue-modal");
+
+                }
             }
             resetUpdates();
         }
