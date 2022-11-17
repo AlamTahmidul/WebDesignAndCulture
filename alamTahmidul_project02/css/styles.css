@@ -235,6 +235,10 @@ html, body {
     color: var(--swatch-dark); */
 }
 
+/* #true-clue-pair {
+    background-color: burlywood;
+} */
+
 /* Class macros: Structured like TailwindCSS */
 .relative {
     position: relative;

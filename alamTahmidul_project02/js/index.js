@@ -23,7 +23,6 @@ const musicPlaylist = [horrorBackgroundMusic, horrorPianoTheme, horrorPiano];
 let ambiencePlayed = false;
 let musicPlaylistIndex = 0;
 
-
 // Setup Environment
 let gameTimerDuration = TimerDuration;
 let gameTimerHandler;
@@ -101,8 +100,9 @@ window.onload = function () {
             } else if (updateType === "win") {
                 updateValue = localStorage.getItem("updateValue");
                 if (updateValue === "true") {
-                    const winModal = document.getElementById("clue-modal");
-                    alert("You Win!");
+                    // const winModal = document.getElementById("clue-modal");
+                    // winModal.appendChild()
+                    GameWin();
                 }
             }
             resetUpdates();
@@ -123,6 +123,7 @@ const Searching = (event) => {
         document.getElementById("content-cards").innerHTML = "";
         const value = document.getElementById("url").value.toLowerCase();
         if (playerReachedEnd(value)) { // Check if what the player inputted is the final URL
+            document.getElementById("content-cards").innerHTML = "";
             document.getElementById("subscreen-iframe").src = "html/final.html";
         } else {
             const filteredSearches = Object.entries(PossibleResults).filter(pair => pair[0].toLowerCase().includes(value) || value.includes(pair[0].toLowerCase()));
@@ -168,13 +169,36 @@ const playerReachedEnd = (value) => {
     const winCondCheck = cluesFound.filter(val => val.includes("1.") || val.includes("2.") || val.includes("3.") || val.includes("4.")); // 4 Pieces of Code
     if (winCondCheck.length !== 4) return false;
     // console.log(winCondCheck, value);
-    winCondCheck.sort().forEach(token => token.substring(2));
-    console.log(winCondCheck, value);
-    const exitCode = winCondCheck.join();
-    console.log(winCondCheck, value);
+    winCondCheck.sort();
+    for (const i in winCondCheck) {
+        winCondCheck[i] = winCondCheck[i].substring(2);
+    }
+    // console.log(winCondCheck, value);
+    const exitCode = winCondCheck.join("");
+    // console.log(exitCode, value);
     if (value === exitCode.toLowerCase()) return true;
+    document.getE
     return false;
 }
+
+const GameWin = () => {
+    document.body.innerHTML = `
+        <div id="intro" class="flex">
+            <div id="intro-content" class="flex-col" style="text-align: center; overflow: hidden;">
+                <!-- Game Win -->
+                <h1 style="text-align: center; font-size:32pt;">You Survived!</h1>
+                <p style="font-weight:100; font-size: 16pt; text-align: justify;">
+                    Amidst All the Challenges, You Managed to Beat All the Puzzles.
+                    <br/><br/>
+                    Redirecting Back to the Main Menu in 5 seconds...
+                </p>
+            </div>
+        </div>
+    `;
+    setTimeout(() => {
+        location.href = "index.html";
+    }, 5000);
+};
 
 const GameOver = () => {
     pingJSAudio.play();

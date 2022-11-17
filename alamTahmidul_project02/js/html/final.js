@@ -8,7 +8,7 @@ window.onload = () => {
 
     setTimeout(() => {
         document.getElementById("hint").style.opacity = 100;
-    }, 5000);
+    }, 10000);
 };
 
 const handleDragOver = (event) => {

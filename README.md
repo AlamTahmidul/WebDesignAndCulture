@@ -14,7 +14,10 @@ Narrative:
 Branching off Project 1, there will be options for the audience to interact with their choices that would affect their "conscience". Due to the "player" choosing the wrong set of words, their sanity level decreases, for which there will be a visual indicator. To further enhance the hallucinatory experience, instead of only emulating a "breathing" effect, there will be audio cues that aid the overall experience. Instead of only having buttons with words, there would be mini-puzzles, time-limits, and other interactive components. Through a series of dialogues and choices, the user goes on an adventure in search of their conscience. At the beginning, the player gets placed in a “hallucinatory” state with no context of what’s going on. Based on the scenario, they are presented with options they face in this state. Their job is to escape from this psychological horror and enter reality. However, their journey will not be easy. They will have cryptic hallucinations and they may enter a realm of unknown possibilities. Amongst a case of random events occurring, can the user find their way out?
 
 Notes:
-    - To Play It Through like a Speedrun, in styles.css, uncomment the background color and color for the .clue and .card properties
+    - To Play It Through like a Speedrun:
+        In styles.css:
+            - Uncomment the background color and color for the .clue and .card properties
+            - Uncomment #true-clue-pair css block code to see the visuals better
 
 Credits:
     - The Paragraphs in the screens are adapted from https://randomwordgenerator.com/paragraph.php and https://lipsum.com/feed/html
