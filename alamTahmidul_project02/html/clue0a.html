@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue 0a</title>
+    <link rel="stylesheet" type="text/css" href="./../css/html/clue0a.css" />
+    <script src="../js/common/setUpdate.js"></script>
+    <script src="../js/html/clue0a.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <h3 style="font-size: 24pt; padding: 2rem;">
+            Puzzles are just a start. You don't have to be as puzzled to solve some of these puzzles. Here is an example.
+            <br/><br/>
+        </h3>
+        <div id="puzzle" style="padding: 2rem;">
+            <p id="drag-target" ondragstart="handleDragStart(event)" draggable="true">Drag me!</p>
+            <div id="drop-target" class="droptarget" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">Here!</div>
+        </div>
+        <div id="tip" style="font-size: 16pt; padding: 2rem;">
+            <em>Did you notice how solving the puzzle shows you a key? Click on it...</em>
+            <br/>
+            <em>Use these keys in a chronological order to make a final word. Let's say you have the following keys: 
+                <br/><br/>1.ToughLuck, 2.AppleJacks
+                <br/><br/>Your escape route would be searching: ToughLuckAppleJacks (upper/lower cases do not matter)</em>
+            <br/><br/>
+            <em>Now, I am about to empty messages. Good luck!</em>
+            <br/><br/>
+            <em>Starting Clue: Diag</em>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+@import url('./default.css');
+
+#show-hint {
+    opacity: 0;
+    transition: opacity 2s;
+}

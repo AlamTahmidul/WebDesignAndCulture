@@ -1,1 +1,23 @@
 @import url('../styles.css');
+
+body {
+    padding: 2rem;
+    width: 90%;
+}
+
+h2 {
+    font-size: 32pt;
+}
+
+h3 {
+    font-weight: 100;
+    font-size: 18pt;
+}
+
+.drop-target-faint {
+    border-color: var(--font-over-darkBg);
+    border-style: solid;
+    border-radius: 3rem;
+    width: 10rem;
+    height: 10rem;
+}

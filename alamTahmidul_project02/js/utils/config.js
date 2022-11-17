@@ -8,14 +8,10 @@
 /**
  *  Time the player has before it expires...
  */
-export const TimerDuration = 30;
+export const TimerDuration = 180;
+
 
 /**
- *  The Player's Objectives
- */
-export const Objectives = [];
-
-/**
- *  List of Clues (aka different pages serving something)
+ *  List of All the Clues (aka different pages serving something)
  */
 export const Clues = [];

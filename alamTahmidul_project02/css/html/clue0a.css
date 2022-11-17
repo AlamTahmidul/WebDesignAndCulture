@@ -1,0 +1,20 @@
+@import url('./default.css');
+
+#drag-target {
+    margin-left: 10%;
+}
+
+#drop-target {
+    text-align: center;
+    margin-left: 50%;
+    width: 10rem;
+    height: 10rem;
+    border-color: wheat;
+    border-radius: 3px;
+    border-style: solid;
+}
+
+#tip {
+    opacity: 0;
+    transition: opacity 2s;
+}

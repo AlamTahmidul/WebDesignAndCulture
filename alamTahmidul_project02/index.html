@@ -14,20 +14,32 @@
         <div id="error-modal"></div>
         <div id="clue-modal"></div>
         <!-- Intro Div -->
-        <div id="intro">
-            <div id="intro-content">
-                <h2>Welcome to the Unknown</h2>
-                <h3 style="font-weight:100;">2022. There has been reports of people going missing after they stumbled upon a mysterious web page on the internet. Official police reports say that all of the victims' neighbors complained about the unexpected loud sounds that occur in their house at random times. Some of the victims disappeared after a few minutes of visiting the site, but no more than 3 minutes. This can't be a coincidence. Rumour has it that each of the victims were accompanied by a man with a black face mask in a black suit and red tie. Security footage shows that the unknown men accompanied their victims out of their homes and never came back. However, there were similar reports that people experienced something similar and they returned alive. The survivors claimed that they had to escape a maze. Some were lucky enough to be alive. Others, however, are still M.I.A.
-                </h3>
+        <div id="intro" class="flex">
+            <div id="intro-content" class="flex-col" style="text-align: center;">
+                <!-- Introduction -->
+                <h1 style="text-align: center; font-size:32pt;">Welcome to the Unknown</h1>
+                <p style="font-weight:100; font-size: 16pt; text-align: justify;">
+                    2022. There has been reports of people going missing after they stumbled upon a mysterious web page on the internet. Official police reports say that all of the victims' neighbors complained about the unexpected loud sounds that occur in their house at random times. Some of the victims disappeared after a few minutes of visiting the site, but no more than 1-2 minutes. This can't be a coincidence. Rumour has it that each of the victims were accompanied by a man with a black face mask in a black suit and red tie. Security footage shows that the unknown men accompanied their victims out of their homes and never came back. However, rumour on the streets say that there were survivors who were lucky to be alive. Others, however, are still M.I.A.
+                </p>
                 <br/>
-                <h1>Goal: Find the Exit Endpoint (i.e. URL)</h1>
-                <h3></h3>
-                <h3>
-                    The "web page" only had a search bar, a search results section, a messages section, and a screen section.<br/>
-                    Use the search bar to look for key words. The search results will show you 
-                </h3>
-                <br/><br/><br/><br/>
-                <h4>Clue 0: Type <strong>help</strong> in the search bar to get started</h4>
+                <!-- Tutorial -->
+                <h3 style="text-align: center; font-size: 28pt">Tutorial</h3>
+                <p style="text-align: justify; font-size: 16pt;">
+                    The "web page" only has a search bar, a search results section, a messages section, and a screen section.<br/>
+                    <br/>
+                    Use the search bar to look for key words. The search results will show you the results (if any). You can click on the results and a page will open up in the screens section. You can search for clues (if there are any) and hopefully get all the clues to escape.
+                    <br/><br/>
+                    You have 3 minutes to escape. Manage Your Time Wisely and Find The Codes Quickly. Good Luck!
+                </p>
+                <br/><br/>
+                <!-- Set Goal -->
+                <h1 style="text-align: center; font-size: 32pt;">Goal: Find the Exit Endpoint</h1>
+                <!-- Initial Clue -->
+                <h4 style="text-align: center; font-size: 14pt;">Clue 0: Type <em>Help</em> in the search bar to get started...</h4>
+                <!-- Close -->
+                <button id="intro-buttons" class="flex-col" style="padding: 1rem;">
+                    Close
+                </button>
             </div>
         </div>
         <div id="wrapper-body">
@@ -48,7 +60,7 @@
                     </div>
 
                     <!-- Minimize and Close  -->
-                    <div class="flex flex-row" id="window-buttons">
+                    <div class="flex flex-row" id="window-buttons" disabled>
                         <div id="window-minimize-btn">_</div>
                         <div id="window-close-btn">X</div>
                     </div>
@@ -62,19 +74,23 @@
                 <div id="content flex">
                     <div id="content-body">
                         <h2 id="search-results-text">Search Results</h2>
+                        <div id="content-cards">
+
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="user-interface" class="flex flex-row">
                 <div id="dashboard-wrapper" class="flex-row">
                     <div id="dashboard">
-                        <h3>Inventory</h3>
+                        <h3 id="dashboard-title" style="font-size: 18pt;">Messages</h3>
+                        <div id="dashboard-content"></div>
                     </div>
                 </div>
                 <div id="subscreen-wrapper" class="flex-row">
                     <div id="subscreen">
-                        <h3>Screen</h3>
-                        <iframe id="subscreen-iframe" height="512px" width="100%" src="html/clue1.html" title="default index"></iframe>
+                        <h3 style="font-size: 18pt;">Screen</h3>
+                        <iframe id="subscreen-iframe" height="512px" width="100%" src="" title="default index"></iframe>
                     </div>
                 </div>
             </div>

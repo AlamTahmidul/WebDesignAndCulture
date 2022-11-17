@@ -87,7 +87,7 @@ html, body {
     position: relative;
     padding: 1rem;
     text-align: center;
-    cursor: pointer;
+    cursor: not-allowed;
 }
 
 #window-minimize-btn:hover {
@@ -119,6 +119,9 @@ html, body {
     color:var(--swatch-light);
     background-color: var(--swatch-dark);
     cursor: pointer;
+}
+#url-search {
+    width: fit-content;
 }
 
 #content-body {
@@ -164,14 +167,19 @@ html, body {
     border-style: groove;
     border-width: 0.1rem;
     padding: 1rem;
-    height: max-content;
-    row-gap: 1.5rem;
+    height: 38rem;
+    overflow-y: auto;
 }
+
+#dashboard #dashboard-title {
+    position: static;
+}
+
 
 #subscreen-iframe {
     border: 0.3rem;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #game-over {
@@ -198,7 +206,31 @@ html, body {
 }
 
 #intro-content {
-    width: 90%;
+    width: 95%;
+}
+
+#intro-buttons {
+    height: fit-content;
+    background-color: transparent;
+    color: var(--swatch-light);
+    font-weight: 400;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+#intro-buttons:hover {
+    background-color: red;
+    color: var(--font-over-lightBg);
+}
+
+.clue-intext:hover {
+    background-color: var(--swatch-light);
+    color: var(--swatch-dark);
+    font-weight: 300;
+}
+
+.clue, .card {
+    cursor: pointer;
 }
 
 /* Class macros: Structured like TailwindCSS */
