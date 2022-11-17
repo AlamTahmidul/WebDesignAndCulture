@@ -231,6 +231,8 @@ html, body {
 
 .clue, .card {
     cursor: pointer;
+    /* background-color: var(--swatch-light);
+    color: var(--swatch-dark); */
 }
 
 /* Class macros: Structured like TailwindCSS */

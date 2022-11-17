@@ -3,7 +3,7 @@
 import { ItemCard } from "./components/ItemCard.js"
 
 // Import the game configurations
-import { TimerDuration, Clues } from "./utils/config.js";
+import { TimerDuration } from "./utils/config.js";
 
 // Import Search Queries to Cross Reference Against
 import PossibleResults from "../data/search_results.js";
@@ -96,15 +96,13 @@ window.onload = function () {
                     cluesFound.push(updateValue);
                     createPath(updateValue);
                 }
-            } else if (updateType === "event") {
-                // handle events
-                SpawnEvent();
             } else if (updateType === "clear-messages") {
                 document.getElementById("dashboard-content").innerHTML = "";
             } else if (updateType === "win") {
+                updateValue = localStorage.getItem("updateValue");
                 if (updateValue === "true") {
                     const winModal = document.getElementById("clue-modal");
-
+                    alert("You Win!");
                 }
             }
             resetUpdates();
@@ -124,13 +122,17 @@ const Searching = (event) => {
         // Remove the previous results and cross reference with the given clues
         document.getElementById("content-cards").innerHTML = "";
         const value = document.getElementById("url").value.toLowerCase();
-        const filteredSearches = Object.entries(PossibleResults).filter(pair => pair[0].toLowerCase().includes(value) || value.includes(pair[0].toLowerCase()));
-        for (const results of filteredSearches) {
-            const ResultCard = new ItemCard("Content", results[0]).toHTML();
-            ResultCard.onclick = () => {
-                document.getElementById("subscreen-iframe").src = "html/" + results[1];
+        if (playerReachedEnd(value)) { // Check if what the player inputted is the final URL
+            document.getElementById("subscreen-iframe").src = "html/final.html";
+        } else {
+            const filteredSearches = Object.entries(PossibleResults).filter(pair => pair[0].toLowerCase().includes(value) || value.includes(pair[0].toLowerCase()));
+            for (const results of filteredSearches) {
+                const ResultCard = new ItemCard("Content", results[0]).toHTML();
+                ResultCard.onclick = () => {
+                    document.getElementById("subscreen-iframe").src = "html/" + results[1];
+                }
+                document.getElementById("content-cards").appendChild(ResultCard);
             }
-            document.getElementById("content-cards").appendChild(ResultCard);
         }
         // document.getElementById("content-cards").appendChild(new ItemCard("Content", value).toHTML());
         document.getElementById("tab-title").innerText = value;
@@ -162,6 +164,18 @@ const startGameTimer = () => {
     }, 1000);
 }
 
+const playerReachedEnd = (value) => {
+    const winCondCheck = cluesFound.filter(val => val.includes("1.") || val.includes("2.") || val.includes("3.") || val.includes("4.")); // 4 Pieces of Code
+    if (winCondCheck.length !== 4) return false;
+    // console.log(winCondCheck, value);
+    winCondCheck.sort().forEach(token => token.substring(2));
+    console.log(winCondCheck, value);
+    const exitCode = winCondCheck.join();
+    console.log(winCondCheck, value);
+    if (value === exitCode.toLowerCase()) return true;
+    return false;
+}
+
 const GameOver = () => {
     pingJSAudio.play();
 
@@ -188,8 +202,4 @@ const createPath = (value) => {
     const firstPair = paths.find((pair) => pair[0].includes('query'));
     delete PossibleResults[firstPair[0]]; // Deletes the previously held path
     PossibleResults[value] = firstPair[1]; // Creates a new binding based on the clue word
-}
-
-const SpawnEvent = () => {
-
 }

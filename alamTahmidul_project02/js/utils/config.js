@@ -8,7 +8,7 @@
 /**
  *  Time the player has before it expires...
  */
-export const TimerDuration = 180;
+export const TimerDuration = 300;
 
 
 /**

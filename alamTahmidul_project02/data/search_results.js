@@ -13,7 +13,7 @@ const PossibleResults = {
     "query4": "clue5.html",
     "query5": "clue6.html",
     "query6": "clue7.html",
-    "queryEnd": "end.html"
+    "queryEnd": "final.html"
 };
 
 export default PossibleResults;
