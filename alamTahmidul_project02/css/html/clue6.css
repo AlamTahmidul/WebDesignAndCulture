@@ -1,0 +1,10 @@
+@import url('./default.css');
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    display: inline-block;
+}
